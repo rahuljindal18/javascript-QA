@@ -1,0 +1,116 @@
+reverse chars in a word of a given string;
+
+
+function reverseCharsOfWordInString(input){
+    var output = '';
+    var strlength = input.length;
+    var start = 0;
+    for(var i = 0 ; i < strlength ; i++){
+        if( input[i] === ' ' && i > 0 ){
+            output = output + reverse(input , start , i-1);
+            start  = i + 1;
+        }
+        else if(i === strlength-1){
+            output = output + reverse(input , start , i)
+        }
+    }
+    return output;
+}
+
+function reverse(str , start , end){
+    var output = '';
+    for( var i = end ; i>=start ; i--){
+        output = output + str[i];
+    }
+    return output + ' ';
+}
+
+
+
+
+const a =10;
+if(true){
+const a=20
+}
+console.log(a); //10
+
+
+var i = 0;
+for(let i = 1;i<2;i++){
+	console.log(i);
+}
+console.log(“End loop”);  // 1 End loop
+
+var obj1 = {
+	a : "old",
+    b : {
+        c : "new"
+    }
+}
+
+var obj2 = Object.assign({},obj1);
+
+obj1.a = "new"
+obj2.b.c = "old";
+
+console.log(obj1); // {a:new , b:c:old}
+
+console.log(obj2); // {a:old , b:c:old}
+
+
+var arguments = 5;
+
+function foo(){
+    console.log(arguments[0]);
+
+}
+
+foo(10); //10
+
+length = 5;
+let a = {
+    length : 6,
+    foo : function(){
+        console.log(this.length)
+    }
+}
+
+a.foo() //6
+
+<div></div><p></p>
+
+for(elem of document.querySelectorAll('*')){
+    elem.addEventListener('click', e => {console.log(`TOM ${e.target}`)});
+    elem.addEventListener('click', e => {console.log(`JERRY ${e.target}`)},true);
+}
+
+// jerry div tom div jerry p tom p
+
+reverse char of words in a string maintaining the same order 
+
+function reverse(str, start, end){
+    var tempstr = '';
+    for(var i=end;i>=start;i--){
+        tempstr = tempstr + str[i]
+    }
+    return tempstr + ' ';
+}
+
+function reverseCharsInWordOfString(input){
+    var revstr = '';
+    var start = 0;
+    for(var i=0;i<input.length;i++){
+        if(input[i] === ' ' && i>0){
+            revstr = revstr + reverse(input,start,i-1);
+            start = i+1;
+        }
+        else if(i === input.length-1){
+            revstr = revstr + reverse(input,start,i);
+        }
+        
+    }
+
+    return revstr;
+}
+
+reverseWordChars("nice revese words example");
